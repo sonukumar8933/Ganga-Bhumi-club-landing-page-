@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makar Sankranti Mela 2026 - Ganga Bhumi Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #FF6B35;
+            --secondary: #F7931E;
+            --accent: #FFB84D;
+            --dark: #2C3E50;
+            --light: #FFF5E6;
+            --white: #FFFFFF;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 1rem 2rem;
+            box-shadow: 0 4px 12px var(--shadow);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--white);
+            box-shadow: 0 4px 8px var(--shadow);
+        }
+
+        .event-title {
+            color: var(--white);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        main {
+            margin-top: 90px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: movePattern 20s linear infinite;
+        }
+
+        @keyframes movePattern {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .hero-content {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .countdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 1.5rem;
+            max-width: 600px;
+            margin: 3rem auto;
+        }
+
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .countdown-number {
+            font-size: 3rem;
+            font-weight: 700;
+            display: block;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .countdown-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-section {
+            background: var(--light);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .register-btn {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 1.2rem 3rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .register-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(255, 107, 53, 0.5);
+        }
+
+        .qr-container {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px var(--shadow);
+        }
+
+        .qr-container h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .qr-code {
+            width: 200px;
+            height: 200px;
+            background: var(--light);
+            border: 3px solid var(--primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            cursor: pointer;
+        }
+
+        .qr-code img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .info-section {
+            padding: 4rem 2rem;
+            background: var(--white);
+        }
+
+        .info-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .info-card {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px var(--shadow);
+            border-left: 5px solid var(--primary);
+            transition: transform 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .info-card h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-card h3::before {
+            content: '✦';
+            color: var(--secondary);
+        }
+
+        .steps ol {
+            padding-left: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .steps li {
+            margin-bottom: 0.8rem;
+            padding-left: 0.5rem;
+        }
+
+        .payment-details, .included-items {
+            margin-top: 1rem;
+        }
+
+        .payment-details p, .included-items ul {
+            margin-top: 0.5rem;
+        }
+
+        .included-items ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .included-items li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .included-items li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .highlight {
+            background: var(--white);
+            padding: 0.8rem;
+            border-radius: 8px;
+            margin: 0.5rem 0;
+            border: 1px solid var(--accent);
+        }
+
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .countdown {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .countdown-number {
+                font-size: 2rem;
+            }
+
+            .event-title {
+                font-size: 1.1rem;
+            }
+
+            .logo {
+                width: 50px;
+                height: 50px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .register-btn {
+                padding: 1rem 2rem;
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 0.8rem 1rem;
+            }
+
+            .header-content {
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .countdown-number {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="logo.png" alt="Ganga Bhumi Club Logo" class="logo">
+            <h1 class="event-title">Makar Sankranti Mela 2026</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>🪁 Makar Sankranti Mela 2026 🪁</h1>
+                <p>Join Ganga Bhumi Club for an unforgettable spiritual and cultural journey to the holy ghats of Varanasi. Experience the sacred traditions, witness mesmerizing rituals, and celebrate the auspicious festival of Makar Sankranti on the banks of Mother Ganga.</p>
+                
+                <div class="countdown" id="countdown">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="days">00</span>
+                        <span class="countdown-label">Days</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="hours">00</span>
+                        <span class="countdown-label">Hours</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="minutes">00</span>
+                        <span class="countdown-label">Minutes</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="seconds">00</span>
+                        <span class="countdown-label">Seconds</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="cta-content">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSd_a2lwwHCFfLsFr6C9QemwSdV3r4E32tWIvAJfU_7c8hoq9g/viewform?usp=publish-editor" class="register-btn" target="_blank" rel="noopener">
+                    📝 Register Now
+                </a>
+                
+                <div class="qr-container">
+                    <h3>Quick Registration via QR Code</h3>
+                    <p>Scan to register instantly</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSd_a2lwwHCFfLsFr6C9QemwSdV3r4E32tWIvAJfU_7c8hoq9g/viewform?usp=publish-editor" target="_blank" rel="noopener">
+                        <div class="qr-code">
+                            <img src="mela-qr.png" alt="Makar Sankranti Mela registration QR code">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <div class="info-container">
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>Registration Process</h3>
+                        <div class="steps">
+                            <ol>
+                                <li>Click the "Register Now" button or scan the QR code above</li>
+                                <li>Fill in your personal details in the Google Form</li>
+                                <li>Submit your registration form</li>
+                                <li>Complete the payment using the details provided</li>
+                                <li>Upload payment proof in the confirmation form</li>
+                                <li>Receive your registration confirmation via email within 24 hours</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Payment Details</h3>
+                        <div class="payment-details">
+                            <div class="highlight">
+                                <strong>Bank Transfer:</strong>
+                                <p>Account Name: Ganga Bhumi Club</p>
+                                <p>Account Number: 1234567890</p>
+                                <p>IFSC Code: SBIN0001234</p>
+                                <p>Bank: State Bank of India</p>
+                            </div>
+                            <div class="highlight">
+                                <strong>UPI Payment:</strong>
+                                <p>UPI ID: gangabhumiclub@paytm</p>
+                                <p>Phone: +91 98765 43210</p>
+                            </div>
+                            <p style="margin-top: 1rem;"><strong>Registration Fee:</strong> ₹250 per person</p>
+                            <p style="color: var(--primary); font-weight: 600;">Early Bird Discount: Register before Dec 31, 2025 and save ₹500!</p>
+                        </div>
+                    </div>
+
+                    
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <h3>Ganga Bhumi Club</h3>
+            <div class="social-links">
+                <a href="gangabhumiunity@vitbhopal.ac.in">✉️ gangabhumiunity@vitbhopal.ac.in</a>
+                <a href="tel:+919876543210">📞 +91 98765 43210</a>
+            </div>
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a>
+                <a href="https://www.instagram.com/gangabhumiclub.vitb/" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://twitter.com" target="_blank" rel="noopener">Twitter</a>
+                <a href="https://youtube.com" target="_blank" rel="noopener">YouTube</a>
+            </div>
+            <p style="margin-top: 1.5rem;">© 2025 Ganga Bhumi Club. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Countdown Timer
+        const targetDate = new Date('November 13, 2025 09:00:00 GMT+0530').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }
+
+        // Update countdown immediately and then every second
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
